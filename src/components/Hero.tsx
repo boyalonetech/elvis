@@ -3,6 +3,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle,
@@ -30,11 +31,9 @@ type SectionProps = {
 
 const Section = ({ id, title, subtitle, children }: SectionProps) => (
   <section id={id} className="relative py-20 sm:py-28">
-    {/* soft radial glow */}
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/10 to-cyan-500/20 blur-3xl" />
     </div>
-
     <div className="relative mx-auto max-w-6xl px-4">
       <motion.h2
         variants={fadeUp}
@@ -61,10 +60,10 @@ const Section = ({ id, title, subtitle, children }: SectionProps) => (
   </section>
 );
 
-export default function Hero() {
+export default function LearnMore() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-[#0B0B12] text-white">
-      {/* gradient backdrop sweep */}
+      {/* Gradient overlay */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-white/[0.06] to-transparent" />
       </div>
@@ -75,83 +74,93 @@ export default function Hero() {
           <div className="absolute left-1/2 top-[-120px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-fuchsia-500/20 via-indigo-500/20 to-cyan-400/20 blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-6xl px-4 pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-24">
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs sm:text-sm text-white/70 backdrop-blur"
-          >
-            <Sparkles className="h-4 w-4" />
-            Learn More
-          </motion.p>
-
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mt-4 text-3xl sm:text-5xl md:text-6xl font-semibold leading-tight"
-          >
-            We design experiences that
-            <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
-              {" "}
-              captivate & convert
-            </span>
-            .
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mt-4 max-w-2xl text-white/70 text-base sm:text-lg"
-          >
-            A strategic blend of research, product thinking, and standout visuals—
-            so your brand looks sharp and your users get results.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mt-8 flex flex-col sm:flex-row gap-3"
-          >
-            <Link
-              href="/#work"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm sm:text-base font-medium hover:opacity-90"
+        <div className="mx-auto max-w-6xl px-4 pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-24 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Text */}
+          <div>
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs sm:text-sm text-white/70 backdrop-blur"
             >
-              Explore Work{" "}
-              <ArrowRight className="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm sm:text-base text-white/90 backdrop-blur hover:bg-white/10"
-            >
-              Start a Project
-            </Link>
-          </motion.div>
+              <Sparkles className="h-4 w-4" />
+              UI/UX & Graphic Designer
+            </motion.p>
 
-          {/* quick stats */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3"
-          >
-            {[
-              ["45%+", "Avg. engagement lift"],
-              ["30+", "Brand projects"],
-              ["3+", "Years experience"],
-              ["100%", "Client satisfaction"],
-            ].map(([k, v]) => (
-              <div
-                key={k}
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5 text-center backdrop-blur"
+            <motion.h1
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              className="mt-4 text-3xl sm:text-5xl md:text-6xl font-semibold leading-tight"
+            >
+              Designing digital experiences that
+              <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
+                {" "}
+                inspire & engage
+              </span>
+              .
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              className="mt-4 max-w-2xl text-white/70 text-base sm:text-lg"
+            >
+              At <strong>BoyAlone Techs</strong>, I blend creativity with
+              strategy — crafting interfaces, visuals, and brands that look
+              beautiful and work seamlessly.
+            </motion.p>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              className="mt-8 flex flex-col sm:flex-row gap-3"
+            >
+              <Link
+                href="/#work"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm sm:text-base font-medium hover:opacity-90"
               >
-                <div className="text-xl sm:text-2xl font-semibold">{k}</div>
-                <div className="text-xs sm:text-sm text-white/70 mt-1">{v}</div>
-              </div>
-            ))}
+                Explore Work{" "}
+                <ArrowRight className="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm sm:text-base text-white/90 backdrop-blur hover:bg-white/10"
+              >
+                Start a Project
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Right: Profile Photo */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="flex justify-center lg:justify-end"
+          >
+<figure className="relative w-56 h-56 sm:w-72 scale-110 lg:scale-130 sm:h-72 rounded-full top-5 overflow-hidden shadow-xl lg:right-20 lg:-top-10">
+  {/* Animated Gradient Border */}
+  <div className="absolute inset-0 rounded-full p-[4px] bg-gradient-conic animate-spin-slow">
+    <div className="w-full h-full rounded-full bg-[#0B0B12]"></div>
+  </div>
+
+  {/* Profile Image */}
+  <div className="absolute inset-[5px] rounded-full  overflow-hidden z-10">
+    <Image
+      src="/elvis.jpg"
+      alt="Profile Photo"
+      height={600}
+      width={600}
+      className="object-cover rounded-full"
+      priority
+    />
+  </div>
+</figure>
+
+
           </motion.div>
         </div>
       </section>
@@ -159,111 +168,92 @@ export default function Hero() {
       {/* WHAT YOU GET */}
       <Section
         id="benefits"
-        title="What you get"
-        subtitle="Deliverables and outcomes that move the needle."
+        title="Why Work With Me"
+        subtitle="Every project is approached with creativity, precision, and passion for design."
       >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            {
-              title: "Research-driven UX",
-              desc: "User flows, wireframes, and tests anchored in real insights.",
-            },
-            {
-              title: "Premium UI Systems",
-              desc: "Component libraries and visual language that scale.",
-            },
-            {
-              title: "Brand Cohesion",
-              desc: "Logo, color, and typography tuned for recall.",
-            },
-            {
-              title: "Fast Handoffs",
-              desc: "Dev-ready files in Figma plus annotated specs.",
-            },
-            {
-              title: "Conversion Focus",
-              desc: "Clear funnels, crisp copy, and smart micro-interactions.",
-            },
-            {
-              title: "Ongoing Support",
-              desc: "Iteration sprints to refine after launch.",
-            },
-          ].map((card) => (
-            <motion.div
-              key={card.title}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-80px" }}
-              className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur hover:bg-white/[0.06] transition"
-            >
-              <div className="flex items-center gap-3">
-                <CheckCircle className="h-5 w-5" />
-                <h3 className="text-lg font-medium">{card.title}</h3>
-              </div>
-              <p className="mt-3 text-sm text-white/70">{card.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* PROCESS TIMELINE */}
-      <Section
-        id="process"
-        title="How we work"
-        subtitle="A simple, transparent 4-step process."
-      >
-        <ol className="relative pl-6 space-y-8 before:absolute before:left-3 before:top-0 before:h-full before:w-px before:bg-white/10">
-          {[
-            ["Discovery", "Goals, audience, and success metrics."],
-            ["UX & Wireframes", "Flows and structure validated by feedback loops."],
-            ["UI & Visual System", "Components, styles, and motion states."],
-            ["Handoff & Launch", "Dev specs, QA support, and post-launch iteration."],
+            ["Creative Design", "Modern visuals that attract and inspire."],
+            ["User-Centered", "Interfaces that are intuitive & easy to use."],
+            ["Brand Identity", "Building brands that stand out with meaning."],
+            ["Responsive Layouts", "Designs that adapt to every device."],
+            ["Attention to Detail", "Pixel-perfect work for maximum impact."],
+            ["Collaborative Approach", "Your vision, elevated with expertise."],
           ].map(([title, desc], i) => (
-            <motion.li
-              key={title}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="relative ml-2"
-            >
-              <div className="absolute -left-[2.1rem] top-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xs">
-                  {i + 1}
-                </div>
-              </div>
-              <h4 className="text-base sm:text-lg font-medium">{title}</h4>
-              <p className="mt-1 text-sm text-white/70">{desc}</p>
-            </motion.li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* CAPABILITIES */}
-      <Section id="capabilities" title="Capabilities" subtitle="From brand to ship.">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            ["UI/UX Design", "Web apps, mobile apps, dashboards"],
-            ["Brand Identity", "Logos, color, type, voice"],
-            ["Product Strategy", "Positioning, roadmap, KPIs"],
-            ["Prototyping", "Hi-fi flows, interactions, and tests"],
-            ["Design Systems", "Atoms, tokens, documentation"],
-            ["Creative Assets", "Landing pages, social kits"],
-          ].map(([t, d]) => (
             <motion.div
-              key={t}
+              key={i}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
             >
-              <div className="flex items-center gap-2">
-                <Star className="h-5 w-5" />
-                <h3 className="text-lg font-medium">{t}</h3>
-              </div>
-              <p className="mt-2 text-sm text-white/70">{d}</p>
+              <CheckCircle className="h-6 w-6 text-indigo-400" />
+              <h3 className="mt-3 text-lg font-semibold">{title}</h3>
+              <p className="mt-1 text-sm text-white/70">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* PROCESS */}
+      <Section
+        id="process"
+        title="My Process"
+        subtitle="A structured, yet creative approach that ensures quality and clarity."
+      >
+        <ol className="relative border-l border-white/10 pl-6">
+          {[
+            ["Discovery", "Understanding your needs & audience."],
+            ["Wireframing", "Sketching ideas and user flows."],
+            ["Design", "Crafting visuals with colors & typography."],
+            ["Prototyping", "Interactive mockups for feedback."],
+            ["Delivery", "Final assets ready to launch."],
+          ].map(([step, desc], i) => (
+            <motion.li
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="mb-10 ml-6"
+            >
+              <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold">
+                {i + 1}
+              </span>
+              <h3 className="font-semibold">{step}</h3>
+              <p className="text-sm text-white/70">{desc}</p>
+            </motion.li>
+          ))}
+        </ol>
+      </Section>
+
+      {/* CAPABILITIES */}
+      <Section
+        id="capabilities"
+        title="Capabilities"
+        subtitle="Tools & skills that I bring to every project."
+      >
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {[
+            "Figma",
+            "Adobe XD",
+            "Photoshop",
+            "Illustrator",
+            "Canva",
+            "Prototyping",
+            "Wireframing",
+            "Brand Design",
+          ].map((tool, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="rounded-lg border border-white/10 bg-white/5 p-4 text-center text-sm font-medium"
+            >
+              {tool}
             </motion.div>
           ))}
         </div>
@@ -272,114 +262,95 @@ export default function Hero() {
       {/* TESTIMONIALS */}
       <Section
         id="testimonials"
-        title="What clients say"
-        subtitle="Real results from real projects."
+        title="What Clients Say"
+        subtitle="Feedback from people I've collaborated with."
       >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2">
           {[
-            ["Mark L., CEO", "“Seamless process and a 60% boost in engagement.”"],
-            ["Sandra W., Marketing", "“Nailed the vision—distinct and memorable visuals.”"],
-            ["Leo D., Co-founder", "“Timely, professional, and incredibly creative.”"],
-          ].map(([name, quote]) => (
-            <motion.figure
-              key={name}
+            [
+              "Working with BoyAlone Techs was a game-changer. The designs elevated our brand instantly.",
+              "— Client A",
+            ],
+            [
+              "Professional, creative, and highly skilled. Highly recommend for any UI/UX or graphic project.",
+              "— Client B",
+            ],
+          ].map(([quote, name], i) => (
+            <motion.div
+              key={i}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
             >
-              <MessageCircle className="h-5 w-5" />
-              <blockquote className="mt-3 text-sm leading-relaxed text-white/80">
-                {quote}
-              </blockquote>
-              <figcaption className="mt-3 text-xs text-white/60">{name}</figcaption>
-            </motion.figure>
+              <p className="text-white/80 italic">“{quote}”</p>
+              <p className="mt-3 text-sm font-medium text-white/60">{name}</p>
+            </motion.div>
           ))}
         </div>
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" title="FAQs" subtitle="Straight answers.">
-        <div className="grid sm:grid-cols-2 gap-6">
+      <Section id="faq" title="FAQ">
+        <div className="space-y-6">
           {[
             [
+              "Do you work remotely?",
+              "Yes! I collaborate with clients worldwide through online platforms.",
+            ],
+            [
+              "What’s your design process?",
+              "Discovery → Wireframe → Design → Prototype → Delivery.",
+            ],
+            [
               "How long does a project take?",
-              "Most engagements run 2–6 weeks depending on scope.",
+              "Depends on the scope, usually 1-3 weeks for full design projects.",
             ],
-            [
-              "Do you offer dev handoff?",
-              "Yes—annotated Figma files, specs, and QA support.",
-            ],
-            [
-              "What tools do you use?",
-              "Figma, a11y tooling, and handoff plugins. Tailwind on the web.",
-            ],
-            [
-              "Can you work with our dev team?",
-              "Absolutely. We collaborate async or live as needed.",
-            ],
-          ].map(([q, a]) => (
+          ].map(([q, a], i) => (
             <motion.div
-              key={q}
+              key={i}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"
+              className="rounded-xl border border-white/10 bg-white/5 p-4"
             >
-              <div className="flex items-start gap-3">
-                <Info className="mt-0.5 h-5 w-5" />
-                <div>
-                  <h4 className="font-medium">{q}</h4>
-                  <p className="mt-1 text-sm text-white/70">{a}</p>
-                </div>
+              <div className="flex items-center gap-2 font-semibold">
+                <Info className="h-5 w-5 text-indigo-400" /> {q}
               </div>
+              <p className="mt-2 text-sm text-white/70">{a}</p>
             </motion.div>
           ))}
         </div>
       </Section>
 
       {/* CTA */}
-      <Section
-        id="cta"
-        title="Ready to build something people love?"
-        subtitle="Tell us about your goals—we’ll reply with a tailored plan."
-      >
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-white/10 via-white/5 to-white/10 p-6 sm:p-8 backdrop-blur">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-medium">Let’s collaborate</h3>
-              <p className="mt-1 text-sm text-white/70">
-                Quick kickoff call, then a clear scope & timeline.
-              </p>
-            </div>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm font-medium hover:opacity-90"
-            >
-              Contact Us <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
+      <Section id="contact" title="Let’s Build Something Great">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="rounded-2xl border border-white/10 bg-gradient-to-r from-indigo-500/10 via-fuchsia-500/10 to-cyan-500/10 p-8 text-center backdrop-blur"
+        >
+          <h3 className="text-xl font-semibold">Ready to start a project?</h3>
+          <p className="mt-2 text-sm text-white/70">
+            Let’s bring your ideas to life with stunning design and seamless
+            experiences.
+          </p>
+          <Link
+            href="/#contact"
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm sm:text-base font-medium hover:opacity-90"
+          >
+            Get in Touch <MessageCircle className="h-4 w-4" />
+          </Link>
+        </motion.div>
       </Section>
 
-      {/* FOOTER MINI */}
-      <footer className="border-t border-white/10 py-10">
-        <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
-          <div>© {new Date().getFullYear()} Biggie Techs & Graphics</div>
-          <nav className="flex items-center gap-5">
-            <Link href="/#about" className="hover:text-white">
-              About
-            </Link>
-            <Link href="/#work" className="hover:text-white">
-              Work
-            </Link>
-            <Link href="/#contact" className="hover:text-white">
-              Contact
-            </Link>
-          </nav>
-        </div>
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 py-6 text-center text-sm text-white/60">
+        © {new Date().getFullYear()} BoyAlone Techs. All rights reserved.
       </footer>
     </main>
   );
