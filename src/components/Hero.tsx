@@ -90,7 +90,7 @@ export default function LearnMore() {
               variants={fadeUp}
               initial="hidden"
               animate="show"
-              className="mt-4 text-3xl sm:text-5xl md:text-6xl font-semibold leading-tight"
+              className="mt-4 text-3xl sm:text-5xl md:text-5xl font-semibold leading-tight"
             >
               Designing digital experiences that
               <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
@@ -106,7 +106,7 @@ export default function LearnMore() {
               animate="show"
               className="mt-4 max-w-2xl text-white/70 text-base sm:text-lg"
             >
-              At <strong>BoyAlone Techs</strong>, I blend creativity with
+              Hi I&apos;m <strong>Elvis Nwoke</strong>, I blend creativity with
               strategy — crafting interfaces, visuals, and brands that look
               beautiful and work seamlessly.
             </motion.p>
@@ -118,14 +118,14 @@ export default function LearnMore() {
               className="mt-8 flex flex-col sm:flex-row gap-3"
             >
               <Link
-                href="/#work"
+                href="/projects"
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm sm:text-base font-medium hover:opacity-90"
               >
                 Explore Work{" "}
                 <ArrowRight className="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" />
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm sm:text-base text-white/90 backdrop-blur hover:bg-white/10"
               >
                 Start a Project
@@ -299,7 +299,7 @@ export default function LearnMore() {
               "Yes! I collaborate with clients worldwide through online platforms.",
             ],
             [
-              "What’s your design process?",
+              "What's your design process?",
               "Discovery → Wireframe → Design → Prototype → Delivery.",
             ],
             [
@@ -325,7 +325,7 @@ export default function LearnMore() {
       </Section>
 
       {/* CTA */}
-      <Section id="contact" title="Let’s Build Something Great">
+      <Section id="contact" title="Let&apos;s Build Something Great">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -335,11 +335,11 @@ export default function LearnMore() {
         >
           <h3 className="text-xl font-semibold">Ready to start a project?</h3>
           <p className="mt-2 text-sm text-white/70">
-            Let’s bring your ideas to life with stunning design and seamless
+            Let&apos;s bring your ideas to life with stunning design and seamless
             experiences.
           </p>
           <Link
-            href="/#contact"
+            href="https://wa.me/2348065876439"
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-white text-black px-5 py-3 text-sm sm:text-base font-medium hover:opacity-90"
           >
             Get in Touch <MessageCircle className="h-4 w-4" />
@@ -349,7 +349,7 @@ export default function LearnMore() {
 
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-6 text-center text-sm text-white/60">
-        © {new Date().getFullYear()} BoyAlone Techs. All rights reserved.
+        © {new Date().getFullYear()} Elvis. All rights reserved.
       </footer>
     </main>
   );

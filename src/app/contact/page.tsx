@@ -30,7 +30,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0B0B12] text-white flex items-center justify-center px-4">
+    <main className="min-h-screen mt-10 bg-[#0B0B12] text-white px-6 md:px-12 py-20">
       <div className="w-full max-w-lg bg-white/5 border border-white/10 rounded-2xl shadow-lg p-8 backdrop-blur">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
