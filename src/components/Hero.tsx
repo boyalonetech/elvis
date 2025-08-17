@@ -8,7 +8,6 @@ import {
   ArrowRight,
   CheckCircle,
   Sparkles,
-  Star,
   MessageCircle,
   Info,
 } from "lucide-react";
