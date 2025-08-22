@@ -17,8 +17,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-3 lg:top-5 left-0 w-full lg:max-w-[1200px]  py-2 lg:mx-10 bg-[#0B0B12]/80 backdrop-blur-md rounded-4xl border-b border-white/10 z-50">
-      <div className="max-w-6xl px-6 flex items-center justify-between h-16">
+    <header className="fixed top-3 lg:top-5 left-0 w-full lg:max-w-[1200px]  xl:max-w-[1800px] py-2 lg:mx-10 bg-[#0B0B12]/80 backdrop-blur-md rounded-4xl border-b border-white/10 z-50">
+      <div className="max-w-8xl px-6 flex items-center justify-between h-16">
         {/* Brand Name */}
     <Link
       href="/"
