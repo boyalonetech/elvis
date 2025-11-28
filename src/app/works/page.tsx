@@ -2,8 +2,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { iframe } from "framer-motion/client";
-import { title } from "process";
 
 const projects = [
   {
