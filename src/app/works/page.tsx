@@ -2,55 +2,73 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { iframe } from "framer-motion/client";
+import { title } from "process";
 
 const projects = [
+  {
+    title: "12",
+    iframe: "https://www.behance.net/embed/project/238032219?ilo0=1",
+  },
+
+  {
+    title: "15",
+    iframe: "https://www.behance.net/embed/project/232930305?ilo0=1",
+  },
+
+  {
+    title: "14",
+    iframe: "https://www.behance.net/embed/project/234747471?ilo0=1",
+  },
   {
     title: "1",
     iframe: "https://www.behance.net/embed/project/231946113?ilo0=1",
   },
   {
     title: "2",
+    // iframe: "https://www.behance.net/embed/project/238032219?ilo0=1",
     iframe: "https://www.behance.net/embed/project/232166489?ilo0=1",
   },
   {
     title: "3",
     iframe: "https://www.behance.net/embed/project/230491529?ilo0=1",
   },
-    {
+  {
     title: "4",
     iframe: "https://www.behance.net/embed/project/229628877?ilo0=1",
   },
-    {
+  {
     title: "5",
     iframe: "https://www.behance.net/embed/project/231234013?ilo0=1",
   },
-      {
+  {
     title: "6",
     iframe: "https://www.behance.net/embed/project/229728609?ilo0=1",
   },
-      {
+  {
     title: "7",
     iframe: "https://www.behance.net/embed/project/228937239?ilo0=1",
   },
-      {
+  {
     title: "8",
     iframe: "https://www.behance.net/embed/project/229615933?ilo0=1",
   },
-      {
+  {
     title: "9",
     iframe: "https://www.behance.net/embed/project/229408955?ilo0=1",
   },
-        {
+  {
     title: "10",
     iframe: "https://www.behance.net/embed/project/228958227?ilo0=1",
-  },   
-     {
+  },
+  {
     title: "11",
     iframe: "https://www.behance.net/embed/project/229036179?ilo0=1",
-  },   
-     {
-    title: "12",
-    iframe: "https://www.behance.net/embed/project/229199105?ilo0=1",
+  },
+
+  {
+    title: "13",
+    iframe: "https://www.behance.net/embed/project/232166489?ilo0=1",
   },
 ];
 
